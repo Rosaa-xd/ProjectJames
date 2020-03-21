@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Spotify web test</title>
+    </head>
+    <body>
+        <h1>Spotify web test</h1>
+        <script src="https://sdk.scdn.co/spotify-player.js"></script>
+        <script>
+            window.onSpotifyWebPlaybackSDKReady = () => {
+                const token = "BQAhIcM0YC7FtyeTBajGgUUrj3c_cojbVF8RO2OxzI4vFpZHdFJP1XeUvNBOYWB7D18gVPRc_B88r5OnHEknuizeW1szyaFDIUHyKkeoF1ntMRbcSAyqcZuvcQI-qGs2g5PZ0tVJnxkK6tYhNXGL9pEwQFerGTaO"
+                const player = new Spotify.Player({
+                    name: "Spotify Web Test Player",
+                    getOAuthToken: cb => { cb(token); }
+                });
+                player.addListener('initialization_error', ({ message }) => { console.error(message); });
+                player.addListener('authentication_error', ({ message }) => { console.error(message); });
+                player.addListener('account_error', ({ message }) => { console.error(message); });
+                player.addListener('playback_error', ({ message }) => { console.error(message); });
+
+                player.addListener('player_state_changed', state => {console.log(state); });
+
+                player.addListener('ready', ({ device_id }) => {
+                    console.log('Ready with Device ID', device_id);
+                });
+
+                player.addListener('not_ready', ({ device_id }) => {
+                    console.log('Device ID has gone offline', device_id);
+                });
+
+                player.connect();
+            }
+        </script>
+    </body>
+</html>
