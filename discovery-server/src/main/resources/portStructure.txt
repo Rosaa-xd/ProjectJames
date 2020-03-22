@@ -1,0 +1,4 @@
+Eureka Server: 8000
+
+API Gateway: 8001 - 8005
+Light Service: 8006 - 8010

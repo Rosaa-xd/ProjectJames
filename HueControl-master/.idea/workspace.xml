@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4241ee2b-0123-4871-9ec9-0576eb5573ac" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1ZS4OJa3BlcAgG5bX8AMwOAmXlb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4241ee2b-0123-4871-9ec9-0576eb5573ac" name="Default Changelist" comment="" />
+      <created>1584819127455</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584819127455</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="3294" y="376" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584820447489">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3294" y="376" key="#com.intellij.execution.impl.EditConfigurationsDialog/62.0.2498.1440/2560.0.2560.1440@2560.0.2560.1440" timestamp="1584820447489" />
+    <state x="3569" y="505" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1584820436318">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3569" y="505" key="#com.intellij.ide.util.TreeClassChooserDialog/62.0.2498.1440/2560.0.2560.1440@2560.0.2560.1440" timestamp="1584820436318" />
+    <state x="1159" y="610" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584819494962">
+      <screen x="62" y="0" width="2498" height="1440" />
+    </state>
+    <state x="1159" y="610" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/62.0.2498.1440/2560.0.2560.1440@62.0.2498.1440" timestamp="1584819494962" />
+    <state x="3615" y="438" key="FileChooserDialogImpl" timestamp="1584820634166">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3615" y="438" key="FileChooserDialogImpl/62.0.2498.1440/2560.0.2560.1440@2560.0.2560.1440" timestamp="1584820634166" />
+    <state x="1091" y="438" key="FileChooserDialogImpl/62.0.2498.1440/2560.0.2560.1440@62.0.2498.1440" timestamp="1584819162950" />
+  </component>
+</project>
