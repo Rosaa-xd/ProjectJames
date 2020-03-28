@@ -4,8 +4,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
-import javax.validation.constraints.AssertTrue;
-import javax.validation.constraints.NotNull;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
