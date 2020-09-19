@@ -23,18 +23,13 @@ public class LightsController {
         return lightsService.turnOffDeskLampRose(state);
     }
 
-    @GetMapping("/test")
-    public String test() {
-        return lightsService.writeTestJsonFile();
-    }
-
-    @GetMapping("/import")
-    public void testJson() {
-        lightsService.importJsonFile();
-    }
-
     @GetMapping("/lights")
     public HashMap<Integer, LightBulb> getLights() {
         return lightsService.getLights();
+    }
+
+    @PutMapping("/blink")
+    public void blink(@RequestParam boolean startState, @RequestParam int loop) throws InterruptedException {
+        lightsService.blink(startState, loop);
     }
 }
