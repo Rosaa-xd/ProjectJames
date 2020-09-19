@@ -19,9 +19,9 @@ public class LightsService {
     private static String FILE = System.getProperty("user.home") +
             "/ProjectJames/lights.json";
 
-    public ResponseEntity<?> turnOffDeskLampRose(boolean state) {
+    public void turnOffDeskLampRose(boolean state) {
         String body = "{\"on\":" + state +"}";
-        return Request.request(
+        Request.request(
                 "/lights/13/state",
                 null,
                 body,

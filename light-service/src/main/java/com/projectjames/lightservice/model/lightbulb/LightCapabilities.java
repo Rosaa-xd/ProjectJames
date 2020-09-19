@@ -4,8 +4,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class LightCapabilities {
+
     private boolean certified;
+
     private Control control;
+
     private Streaming streaming;
 
     public boolean isCertified() {
@@ -33,14 +36,16 @@ public class LightCapabilities {
     }
 
     public class Control {
+
         @JsonProperty("mindimlevel")
         private int minDimLevel;
+
         @JsonProperty("maxlumen")
         private int maxLumen;
+
         @JsonProperty("ct")
         @JsonInclude(JsonInclude.Include.NON_NULL)
         private ColourTemperature colourTemperature;
-
 
         public int getMinDimLevel() {
             return minDimLevel;
@@ -67,8 +72,10 @@ public class LightCapabilities {
         }
 
         public class ColourTemperature {
+
             @JsonProperty("min")
             private int minimum;
+
             @JsonProperty("max")
             private int maximum;
 
@@ -91,7 +98,9 @@ public class LightCapabilities {
     }
 
     public class Streaming {
+
         private boolean renderer;
+
         private boolean proxy;
 
         public boolean isRenderer() {

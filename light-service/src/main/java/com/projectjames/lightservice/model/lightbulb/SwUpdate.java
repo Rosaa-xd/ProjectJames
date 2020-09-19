@@ -1,12 +1,13 @@
 package com.projectjames.lightservice.model.lightbulb;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
 
 import java.util.Date;
 
 public class SwUpdate {
+
     private String state;
+
     @JsonProperty("lastinstall")
     private Date lastInstall;
 

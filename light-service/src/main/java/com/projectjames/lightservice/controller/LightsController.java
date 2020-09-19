@@ -19,8 +19,8 @@ public class LightsController {
     private LightsService lightsService;
 
     @PutMapping("/turnOff")
-    public ResponseEntity<?> turnOff(@RequestParam boolean state) {
-        return lightsService.turnOffDeskLampRose(state);
+    public void turnOff(@RequestParam boolean state) {
+        lightsService.turnOffDeskLampRose(state);
     }
 
     @GetMapping("/lights")

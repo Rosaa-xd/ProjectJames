@@ -3,9 +3,13 @@ package com.projectjames.lightservice.model.lightbulb;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class LightBulbConfig {
+
     private String archetype;
+
     private String function;
+
     private String direction;
+
     @JsonProperty("startup")
     private StartUp startUp;
 
