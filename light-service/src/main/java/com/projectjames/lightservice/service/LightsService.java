@@ -22,10 +22,10 @@ public class LightsService {
             "/ProjectJames/lights.json";
     private final static Logger logger = LoggerFactory.getLogger(LightsService.class);
 
-    public void turnOffDeskLampRose(boolean state) {
+    public void turnOffDeskLampRose(boolean state, int light) {
         String body = "{\"on\":" + state +"}";
         Request.request(
-                "/lights/13/state",
+                "/lights/" + light + "/state",
                 null,
                 body,
                 HttpMethod.PUT
@@ -33,11 +33,11 @@ public class LightsService {
         logger.info("Requesting to turn off the desk light");
     }
 
-    public void blink(boolean startState, int loop) throws InterruptedException {
+    public void blink(boolean startState, int loop, int light) throws InterruptedException {
         for (int i = 0; i < loop; i++) {
             String body = "{\"on\":" + startState + "}";
             Request.request(
-                    "/lights/13/state",
+                    "/lights/" + light + "/state",
                     null,
                     body,
                     HttpMethod.PUT

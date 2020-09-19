@@ -19,8 +19,8 @@ public class LightsController {
     private LightsService lightsService;
 
     @PutMapping("/turnOff")
-    public void turnOff(@RequestParam boolean state) {
-        lightsService.turnOffDeskLampRose(state);
+    public void turnOff(@RequestParam boolean state, @RequestParam int light) {
+        lightsService.turnOffDeskLampRose(state, light);
     }
 
     @GetMapping("/lights")
@@ -29,7 +29,7 @@ public class LightsController {
     }
 
     @PutMapping("/blink")
-    public void blink(@RequestParam boolean startState, @RequestParam int loop) throws InterruptedException {
-        lightsService.blink(startState, loop);
+    public void blink(@RequestParam boolean startState, @RequestParam int loop, @RequestParam int light) throws InterruptedException {
+        lightsService.blink(startState, loop, light);
     }
 }
