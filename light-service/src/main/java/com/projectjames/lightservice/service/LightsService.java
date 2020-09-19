@@ -7,6 +7,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.projectjames.lightservice.model.lightbulb.LightBulb;
 import com.projectjames.lightservice.util.Request;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -18,6 +20,7 @@ import java.util.*;
 public class LightsService {
     private static String FILE = System.getProperty("user.home") +
             "/ProjectJames/lights.json";
+    private final static Logger logger = LoggerFactory.getLogger(LightsService.class);
 
     public void turnOffDeskLampRose(boolean state) {
         String body = "{\"on\":" + state +"}";
@@ -27,6 +30,7 @@ public class LightsService {
                 body,
                 HttpMethod.PUT
         );
+        logger.info("Requesting to turn off the desk light");
     }
 
     public void blink(boolean startState, int loop) throws InterruptedException {
@@ -48,14 +52,15 @@ public class LightsService {
         ResponseEntity response = Request.request(
                 endPoint, null, null, HttpMethod.GET
         );
+        logger.info("Requesting info of all lights");
 
         try {
-
             ObjectMapper mapper = new ObjectMapper();
             return mapper.readValue(response.getBody().toString(), new TypeReference<HashMap<Integer, LightBulb>>() {
             });
         } catch (JsonProcessingException | NullPointerException e) {
             e.printStackTrace();
+            logger.error("An error occurred when retrieving information on all lights");
             return null;
         }
     }
