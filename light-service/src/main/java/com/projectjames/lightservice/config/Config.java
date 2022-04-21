@@ -1,5 +1,6 @@
 package com.projectjames.lightservice.config;
 
+import lombok.SneakyThrows;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
@@ -17,15 +18,11 @@ public class Config {
     private static final String PROPERTIES_LOCATION = System.getProperty("user.home") +
             "/ProjectJames/lightservice.properties";
 
+    @SneakyThrows(IOException.class)
     public static void getConfig() {
         Properties properties = new Properties();
-        try {
-            properties.load(new FileInputStream(PROPERTIES_LOCATION));
-            USERNAME = properties.getProperty("username");
-            IP_ADDRESS = properties.getProperty("ipaddress");
-        }
-        catch (IOException ex) {
-            ex.printStackTrace();
-        }
+        properties.load(new FileInputStream(PROPERTIES_LOCATION));
+        USERNAME = properties.getProperty("username");
+        IP_ADDRESS = properties.getProperty("ipaddress");
     }
 }

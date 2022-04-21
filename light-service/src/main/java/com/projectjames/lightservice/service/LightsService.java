@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.projectjames.lightservice.model.lightbulb.LightBulb;
 import com.projectjames.lightservice.util.Request;
 
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpMethod;
@@ -16,11 +17,12 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.util.*;
 
+@Slf4j
 @Service
 public class LightsService {
     private static String FILE = System.getProperty("user.home") +
             "/ProjectJames/lights.json";
-    private final static Logger logger = LoggerFactory.getLogger(LightsService.class);
+    //private final static Logger logger = LoggerFactory.getLogger(LightsService.class);
 
     public void turnOffDeskLampRose(boolean state, int light) {
         String body = "{\"on\":" + state +"}";
@@ -30,7 +32,7 @@ public class LightsService {
                 body,
                 HttpMethod.PUT
         );
-        logger.info("Requesting to turn off the desk light");
+        log.info("Requesting to turn off the desk light");
     }
 
     public void blink(boolean startState, int loop, int light) throws InterruptedException {
@@ -52,7 +54,7 @@ public class LightsService {
         ResponseEntity response = Request.request(
                 endPoint, null, null, HttpMethod.GET
         );
-        logger.info("Requesting info of all lights");
+        log.info("Requesting info of all lights");
 
         try {
             ObjectMapper mapper = new ObjectMapper();
@@ -60,7 +62,7 @@ public class LightsService {
             });
         } catch (JsonProcessingException | NullPointerException e) {
             e.printStackTrace();
-            logger.error("An error occurred when retrieving information on all lights");
+            log.error("An error occurred when retrieving information on all lights");
             return null;
         }
     }
