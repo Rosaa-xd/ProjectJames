@@ -13,6 +13,15 @@ public class State {
     @JsonProperty("bri")
     private int brightness;
 
+    private int hue;
+
+    @JsonProperty("sat")
+    private int saturation;
+
+    private String effect;
+
+    private float[] xy;
+
     private String alert;
 
     private String mode;
@@ -21,7 +30,7 @@ public class State {
 
     @JsonProperty("ct")
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private String colourTemperature;
+    private int colourTemperature;
 
     @JsonProperty("colormode")
     @JsonInclude(JsonInclude.Include.NON_NULL)

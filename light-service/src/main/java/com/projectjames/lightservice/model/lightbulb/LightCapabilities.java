@@ -1,9 +1,12 @@
 package com.projectjames.lightservice.model.lightbulb;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter @Setter
 public class LightCapabilities {
@@ -22,6 +25,12 @@ public class LightCapabilities {
 
         @JsonProperty("maxlumen")
         private int maxLumen;
+
+        @JsonProperty("colorgamuttype")
+        private String colorGamutType;
+
+        @JsonProperty("colorgamut")
+        private List<List<Double>> colorGamut;
 
         @JsonProperty("ct")
         @JsonInclude(JsonInclude.Include.NON_NULL)
